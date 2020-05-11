@@ -136,7 +136,7 @@ function createComponent() {
   comp = fixture.componentInstance;
 
   const injector = fixture.debugElement.injector;
-  location = injector.get(Location) as SpyLocation;
+  location = injector.get(Location);
   router = injector.get(Router);
   router.initialNavigation();
   spyOn(injector.get(TwainService), 'getQuote')
@@ -163,8 +163,8 @@ class Page {
     const events = this.recordedEvents;
     expect(events.length).toEqual(pairs.length, 'actual/expected events length mismatch');
     for (let i = 0; i < events.length; ++i) {
-      expect((<any>events[i].constructor).name).toBe(pairs[i][0].name, 'unexpected event name');
-      expect((<any>events[i]).url).toBe(pairs[i][1], 'unexpected event url');
+	  expect((events[i].constructor).name).toBe(pairs[i][0].name, 'unexpected event name');
+      expect((events[i]).url).toBe(pairs[i][1], 'unexpected event url');
     }
   }
 
