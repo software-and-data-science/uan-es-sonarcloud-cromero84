@@ -1,5 +1,7 @@
 [class*='col-'] {
   float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
@@ -9,10 +11,7 @@
 h3 {
   text-align: center; margin-bottom: 0;
 }
-[class*='col-'] {
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
+
 [class*='col-']:last-of-type {
   padding-right: 0;
 }
